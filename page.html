@@ -1,0 +1,144 @@
+<html>
+<head>
+  <title>Pizza Hut Sign Up</title>
+  <link rel="stylesheet" type="text/css" href="style/style.css" />
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyA1zHq0zOOXuchWHJcs7ctS1Vis9INEVsc",
+    authDomain: "pizza-hut-3a83a.firebaseapp.com",
+    databaseURL: "https://pizza-hut-3a83a.firebaseio.com",
+    projectId: "pizza-hut-3a83a",
+    storageBucket: "pizza-hut-3a83a.appspot.com",
+    messagingSenderId: "1004469730222"
+  };
+firebase.initializeApp(config);
+</script>
+</head>
+
+<body>
+  <div id="main">
+    <div id="header">
+      <div id="logo">
+<marquee width=75% >
+<img src="13.jpg"width="120" height="70">
+</marquee>
+<img src="bannerr.jpg" height="200" width="200" align="left" ></img>
+<h1 align="middle"><i>Pizza Hut</i></h1>
+<h2 align="middle">India 's largest pizza delivery</h2>
+      
+        <div id="logo_text">
+        </div>
+      </div>
+      <div id="menubar">
+        <ul id="menu">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="examples.html">Menu</a></li>
+          <li><a href="page.html">Sign up</a></li>
+          <li><a href="another_page.html">Sign in</a></li>
+          <li><a href="contact.html">Contact</a></li>
+       </ul>
+      </div>
+    </div>
+    <div id="content_header"></div>
+    <div id="site_content">
+      <div id="sidebar_container">
+        <div class="sidebar">
+          <div class="sidebar_top"></div>
+          <div class="sidebar_item">
+             <h3>Today's deal</h3>
+            <h4>buy 1 get 2</h4>
+            <p>lightneing deal on tuesday's . grab it now</p>
+          </div>
+          <div class="sidebar_base"></div>
+        </div>
+        <div class="sidebar">
+          <div class="sidebar_top"></div>
+          <div class="sidebar_item">
+             <h3>today's special</h3>
+            <ul>
+             <li>corn pasta</li>
+              <li>mied veg pizza</li>
+              <li>olive pizza</li>
+              <li>double cheese pizza</li>
+            </ul>
+          </div>
+          <div class="sidebar_base"></div>
+        </div>
+        <div class="sidebar">
+          <div class="sidebar_top"></div>
+          <div class="sidebar_item">
+             <h3>reach us @</h3>
+            <h4>address:</h4>     
+          </div>
+          <div class="sidebar_base"></div>
+        </div>
+      </div>
+      <div id="content" style="background-color:lightskyblue">
+<img src="1.jpg" height="300"  width="300" align="right">
+<h1><u>SIGN UP</u></h1>
+First name:<input type ="text" id="firstname"><br>
+Last name:<input type ="text" id="lastname"><br>
+Address:<input type ="text" id="address"><br>
+City:<input type ="text" id="city"><br>
+State:<input type ="text" id="state"><br>
+Pin code:<input type ="number" id="pincode"><br>
+Mobile no:<input type ="number" id="mobile_no"><br>
+Mail id:<input type ="text" id="mail_id"><br>
+Age:<input type ="number" id="age"><br>
+User name:<input type ="text" id="username"><br>
+Password<input type ="password" id="password"><br>
+Gender<input type="radio" name="gender" value="male" checked> Male
+  <input type="radio" name="gender" value="female"> Female
+  <input type="radio" name="gender" value="other"> Other <br><br><br> <br></form>
+<form align="center">
+<input type="Submit" value="submit" type="button" onclick="alert('Successfully registered')"> 
+<button type="cancel" id="cancel" >  Cancel</button> 
+</div>
+    </div>
+    <div id="content_footer"></div>
+    <div id="footer">
+ <p><a href="index.html">Home</a> | <a href="examples.html">menu</a> | <a href="page.html">sign up</a> | <a href="another_page.html">sign in</a> | <a href="contact.html">about</a></p>
+    </div>
+  </div>
+</body>
+
+<script>
+var firstname,lastname;
+   $('#submit').click(function())
+   {
+
+     	 firstnamevariable = $('#firstname').val();
+     	 lastnamevariable = $('#lastname').val();
+     	 addressvariable = $('#address').val();
+     	 cityvariable = $('#city').val();
+     	 statevariable = $('#state').val();
+     	 pincodevariable = $('#pincode').val();
+     	 mobile_novariable = $('#mobile_no').val();
+     	 mail_idvariable = $('#mail_id').val();
+     	 usernamevariable = $('#username').val();
+	 passwordvariable = $('#password').val();
+
+	 var database   = firebase.database();
+	 database.ref('existinguser').push({firstname:firstnamevariable,lastname:lastnamevariable,address:addressvariable,city:cityvariable,state:statevariable,pincode:pincodevariable,mobile_no:mobile_novariable,mail_id:mail_idvariable,age:agevariable,username:usernamevariable,password:passwordvariable});
+$('#firstname').val('');
+$('#lastname').val('');
+$('#address').val('');
+$('#city').val('');
+$('#state').val('');
+$('#pincode').val('');
+$('#mobile no').val('');
+$('#mail id').val('');
+$('#age').val('');
+$('#username').val('');
+$('#password').val(''); 
+});
+ </script>
+</html>
+
+<--<script>
+ var database = firebase.database();
+var reference =  database.ref('existing user');
+</script>-->
